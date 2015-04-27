@@ -19,6 +19,13 @@ button{
   margin: 10px;
 }
 
+.error {
+  padding: 10px 0 10px 20px;
+  border-radius: 12px;
+  border: 3px solid red;
+  background-color: #ffb2b2;
+}
+
 /* Buttons ========================================= */
 .btn {
   display: inline-block;
@@ -93,4 +100,8 @@ p {
 #delete {
   display: inline;
   margin-left: 20px;
+}
+
+#needed {
+  color: red;
 }

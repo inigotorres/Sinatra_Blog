@@ -7,9 +7,9 @@ class Message
   include DataMapper::Resource
   property :id, Serial
   property :name, Text
-  property :email, Text
+  property :email, Text, :required => true
   property :subject, Text
-  property :content, Text
+  property :content, Text, :required => true
   property :created_at, DateTime
 end
 
@@ -34,8 +34,11 @@ post '/send' do
   m.email = params[:email]
   m.subject = params[:subject]
   m.content = params[:content]
-  m.save
-  erb :send
+  if m.save
+    erb :send
+  else
+    erb :send_error
+  end
 end
 
 delete '/:id' do
